@@ -223,3 +223,5 @@ df
 
 #테스트 입니다~
 
+! pip install jupyter
+! pip install pyyaml
