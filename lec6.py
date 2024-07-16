@@ -51,6 +51,7 @@ df=pydataset.data('mtcars')
 np_df=np.array(df['mpg'])
 
 model_names = np.array(df.index)
+model_names
 
 # 15이상 25이하인 데이터 개수는?
 sum((np_df>=15) & (np_df<=25))
@@ -114,8 +115,9 @@ a + 3
 np.nan + 3
 np.mean(a)
 np.nanmean(a)
-?np.nan_to_num
+# ?np.nan_to_num
 np.nan_to_num(a, nan=0)
+
 
 False
 a = None
@@ -126,6 +128,7 @@ a
 b + 1
 a + 1
 
+a = np.array([20, np.nan, 13, 24, 309])
 ~np.isnan(a)
 a_filtered = a[~np.isnan(a)]
 a_filtered
