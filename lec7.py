@@ -80,21 +80,3 @@ np.where(a > 3, "Up", "Down")
 df_exam["updown"] = np.where(df_exam["math"] > 50, "Up", "Down")
 df_exam
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
