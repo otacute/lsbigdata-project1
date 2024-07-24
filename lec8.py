@@ -12,6 +12,7 @@ import numpy as np
 exam = pd.read_csv('data/exam.csv')
 exam.head()
 exam.tail()
+
 # 메서드 vs. 속성(어트리뷰트)
 exam.shape
 exam.info()
@@ -31,14 +32,14 @@ exam2['total'] = exam2['math'] + exam2['english'] + exam2['science']
 exam2.head()
 
 exam2["test2"] = np.where(exam2['total'] >= 200, "A", 
-                          np.where(exam2['total'], "B", "C"))
+                          np.where(exam2['total']>=100, "B", "C"))
 # 200 이상 : A
 # 100 이상 : B
 # 100 미만 : C
 exam2.head()
 
 import matplotlib.pyplot as plt
-exam2["test"].value_counts().plot.bar(rot=0)
+exam2["test2"].value_counts().plot.bar(rot=0)
 
 # help
 ?exam2.value_counts().plot.bar
@@ -55,6 +56,7 @@ import numpy as np
 # 벡터 슬라이싱 예제, a를 랜덤하게 채움
 np.random.seed(2024)
 a = np.random.randint(1,21,10)
+a
 ?np.random.randint
 
 # 오늘의 질문 : random으로 중복없이 값을 추출하는 방법
@@ -156,6 +158,7 @@ exam2.groupby("nclass")\
      mean_sci=("science","mean")
      )
 
+! pip install pydataset
 import pydataset
 df = pydataset.data("mpg")
 df
@@ -164,6 +167,8 @@ df.groupby('drv')\
   .agg(n=('drv','count'))
 
 df['drv'].value_counts()
+
+type(df['drv'].value_counts())
 
 df['drv'].value_counts().query('n>100')
 # AttributeError: 'Series' object has no attribute 'query'
@@ -174,20 +179,3 @@ df['drv'].value_counts()\
 
 
 # 숙제 : p144, p153, p158
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

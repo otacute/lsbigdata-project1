@@ -68,6 +68,7 @@ pd.isna(df)
 df["score"] + 1
 
 pd.isna(df).sum()
+pd.isna(df).sum().sum()
 
 # 결측치 제거하기
 df.dropna()                          # 모든 변수 결측치 제거
@@ -107,7 +108,6 @@ exam.iloc[np.array(exam['english']>=90), 3]         # 실행 됨
 exam.iloc[np.where(exam['english']>=90)[0], 3]      # np.where 도 튜플이라 [0] 꺼내오면 됨
 exam.iloc[exam[exam['english'] >= 90].index, 3]     # index 벡터도 작동
 
-
 exam = pd.read_csv("data/exam.csv")
 
 # math 점수 50점 이하 - 로 변경
@@ -115,21 +115,24 @@ exam.loc[exam['math']<=50, ['math']] = "-"
 exam
 
 # "-" 결측치를 수학점수 평균으로 바꾸고 싶은 경우
-#1
-math_mean = exam.loc[exam['math']!="-", ['math']].mean()
+#1 
+math_mean = exam.loc[exam['math']!="-", 'math'].mean()
 exam.loc[exam['math'] == '-', 'math'] = math_mean
+exam
  
 #2
 math_mean = exam.loc[exam['math']=='-', 'math'] = exam.query('math not in ["-"]')['math'].mean()
 exam.loc[exam['math'] == '-', 'math'] = math_mean
+exam
 
 #3
 math_mean = exam[exam['math']!="-"]["math"].mean()
-exam.loc[exam['math']=='-', 'math'] == math_mean
+exam.loc[exam['math']=='-', 'math'] = math_mean
+exam
 
 #4
 exam.loc[exam['math']=="-", ['math']] = np.nan
-mat_mean = exam["math"].mean()
+math_mean = exam["math"].mean()
 exam.loc[pd.isna(exam['math']), ['math']] = math_mean
 exam
 
@@ -143,30 +146,3 @@ exam
 math_mean = exam[exam["math"]!= "-"]["math"].mean()
 exam["math"] = exam["math"].replace("-", math_mean)
 exam
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
