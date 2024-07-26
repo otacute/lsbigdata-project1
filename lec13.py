@@ -237,4 +237,3 @@ plt.scatter(x_values, pdf_values, color='red', linewidth = 2, s=1)
 
 plt.show()
 plt.clf()
-
