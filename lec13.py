@@ -27,7 +27,7 @@ result
 
 # numpy
 import numpy as np
-binom.pmf(np.arange(31), n=30, p=0.3)
+binom.pmf(np.arange(31), n=30, p=0.3
 
 import math 
 math.factorial(54) / (math.factorial(26) * math.factorial(28))
@@ -72,7 +72,7 @@ binom.pmf(np.arange(5), n=10, p =0.36).sum()
 # P(2 < X <= 8) 
 binom.pmf(np.arange(3,9), n=10, p =0.36).sum()
 
-X~B(30,0.2)
+# X~B(30,0.2)
 binom.pmf(np.arange(31), n=30, p =0.2).sum()
 
 # P(X < 4 or X >= 25) 
@@ -89,6 +89,7 @@ a+b
 # 표본 추출 함수
 # X1 ~ Bernulli(p=0.3)
 ?bernoulli.rvs
+from scipy.stats import bernoulli
 bernoulli.rvs(p=0.3)
 # X2 ~ Bernulli(p=0.3)
 bernoulli.rvs(p=0.3)
@@ -96,8 +97,8 @@ bernoulli.rvs(p=0.3)
 bernoulli.rvs(0.3) + bernoulli.rvs(0.3)
 binom.rvs(n=2, p=0.3, size=1)
 binom.pmf(0, n=2, p=0.3)
-binom.pmf(0, n=2, p=0.3)
-binom.pmf(0, n=2, p=0.3)
+binom.pmf(1, n=2, p=0.3)
+binom.pmf(2, n=2, p=0.3)
 
 # X ~ B(30, 0.26)
 # 기대값 30 * 0.26 = 7.8
@@ -183,11 +184,16 @@ plt.plot(k, y, color='black')
 plt.show()
 plt.clf()
 
-## my(loc) : 분포의 중심 결정하는 모수
+## mu(loc) : 분포의 중심 결정하는 모수
 k = np.linspace(-5, 5, 100)
 y = norm.pdf(k, loc=0, scale=1)
+y2 = norm.pdf(k, loc=1, scale=1)
+y3 = norm.pdf(k, loc=-1, scale=1)
 
 plt.plot(k, y, color='black')
+plt.plot(k, y2, color='red')
+plt.plot(k, y3, color='blue')
+
 plt.show()
 plt.clf()
 
@@ -222,6 +228,7 @@ sum((x > 3) & (x < 5)) / 1000
 # 표본 1000개 뽑아서 0보다 작은 비율 확인
 y = norm.rvs(loc=0, scale=1, size=1000)
 np.mean( x < 0 )
+sum(x < 0)/1000
 # ( x < 0).mean()
 
 x = norm.rvs(loc=3, scale=2, size=1000)

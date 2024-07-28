@@ -97,10 +97,3 @@ norm.ppf(0.975, loc=4, scale= np.sqrt(1.333333333/20))
 
 norm.ppf(0.005, loc=4, scale= np.sqrt(1.333333333/20))
 norm.ppf(0.995, loc=4, scale= np.sqrt(1.333333333/20))
-
-
-
-
-
-
-
