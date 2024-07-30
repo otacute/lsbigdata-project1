@@ -21,7 +21,11 @@ import matplotlib.pyplot as plt
 x = np.linspace(0, 8, 2)
 y = 2 * x
 plt.scatter(x,y, s=6)
+<<<<<<< HEAD
 plt.plot(x, y, color="black")
+=======
+# plt.plot(x, y, color="black")
+>>>>>>> 03ddf76706dd738d34c135f48a660e52f105f0f1
 plt.show()
 plt.clf()
 
@@ -34,7 +38,10 @@ plt.plot(x, y, color="black")
 plt.show()
 plt.clf()
 
+<<<<<<< HEAD
 # y = x^2를 점 100개 사용해서 그리기
+=======
+>>>>>>> 03ddf76706dd738d34c135f48a660e52f105f0f1
 x = np.linspace(-8, 8, 100)
 y = x ** 2
 plt.scatter(x,y,s=6)
@@ -100,7 +107,11 @@ x_bar = x.mean()
 s_2 = sum((x-x_bar)**2)/(len(x)-1)
 s_2
 
+<<<<<<< HEAD
 # np.var(x) #사용하면 안됨 주의 # n으로 나눈 값
+=======
+# np.var(x) 사용하면 안됨 주의 # n으로 나눈 값
+>>>>>>> 03ddf76706dd738d34c135f48a660e52f105f0f1
 np.var(x, ddof=1) # n-1으로 나눈 값 (표본 분산)
 
 # n-1 vs. n
@@ -166,7 +177,11 @@ my_df = economics.groupby('year', as_index=False)\
                       )
 my_df
 
+<<<<<<< HEAD
 # mean + 1.96 * std / sqrt(12)
+=======
+mean + 1.96 * std / sqrt(12)
+>>>>>>> 03ddf76706dd738d34c135f48a660e52f105f0f1
 my_df['left_ci'] = my_df['mon_mean'] - 1.96 * my_df['mon_std'] / np.sqrt(my_df['mon_n'])
 my_df['right_ci'] = my_df['mon_mean'] + 1.96 * my_df['mon_std'] / np.sqrt(my_df['mon_n'])
 
@@ -179,3 +194,10 @@ plt.scatter(x,my_df['left_ci'], color = 'green', s=5)
 plt.scatter(x,my_df['right_ci'], color = 'green', s=5)
 plt.show()
 plt.clf()
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 03ddf76706dd738d34c135f48a660e52f105f0f1
