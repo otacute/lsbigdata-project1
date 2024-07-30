@@ -67,7 +67,7 @@ repeated_list = [x for x in numbers for y in [4,2,1,3]]
 repeated_list = [x for x in numbers for y in range(4)]
 repeated_list
 
-#  의 의미
+# _의 의미
 # 1. 앞에 나온 값을 가리킴
 5 + 4
 _ + 6 # _는 9를 의미
@@ -97,6 +97,7 @@ for i in range(5):
 # mylist = []
 # for i in [1,2,3] : 
 #   mylist.append(i*2)
+
 mylist=[]
 mylist.append(2)
 mylist.append(4)
@@ -128,6 +129,7 @@ for i in range(10) :
     mylist[i] = mylist_b[i]
 mylist
 
+
 # 퀴즈: mylist_b의 홀수번째 위치에 있는 숫자들만 mylist에 가져오기
 mylist_b = [2, 4, 6, 80, 10, 12, 24, 35, 23, 20]
 mylist = [0] * 5
@@ -149,6 +151,7 @@ mylist
 
 for i in range(5):
     print("hello")
+    
 
 # i : 0,1,2
 # j : 0,1
@@ -166,9 +169,9 @@ for i in [0,1]:
         print(i)
         
 
-# for i in numbers:
-#     for j in range(4):
-#         print(i, j)
+for i in numbers:
+    for j in range(4):
+        print(i, j)
         
 for i in numbers:
     for j in range(4):
