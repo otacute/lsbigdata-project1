@@ -115,3 +115,5 @@ CI_r = x_bar + t.ppf(0.975, df) * (s/np.sqrt(n))
 CI_l = x_bar + t.ppf(0.025, df) * (s/np.sqrt(n))
 CI = (CI_l, CI_r)
 CI
+
+
