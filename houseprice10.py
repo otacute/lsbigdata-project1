@@ -10,6 +10,8 @@ house_train=pd.read_csv("./data/houseprice/train.csv")
 house_test=pd.read_csv("./data/houseprice/test.csv")
 sub_df=pd.read_csv("./data/houseprice/sample_submission.csv")
 
+house_train.info()
+
 # 이상치 탐색
 # house_train=house_train.query("GrLivArea <= 4500")
 
@@ -79,6 +81,7 @@ test_x = test_x.iloc[:, 1:] # test에는 SalePrice가 없으므로 Id만 제거�
 
 # test_x = test_x.fillna(value=fill_values)
 # test_x.isna().sum()
+
 test_x = test_x.fillna(test_x.mean())
 
 # 결측치 확인
